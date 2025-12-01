@@ -298,7 +298,7 @@ export default function Fuel() {
                             <Stack>
                               <Stack direction="row" spacing={2}>
                                 <Typography variant="body2" color="text.secondary">
-                                  Hodômetro: {log.odometer.toLocaleString()} km
+                                  Odômetro: {log.odometer.toLocaleString()} km
                                 </Typography>
                                 {/* Nome do posto não está no modelo atual */}
                               </Stack>
@@ -341,7 +341,7 @@ export default function Fuel() {
           <Stack spacing={3} sx={{ mt: 2 }}>
             <TextField
               fullWidth
-              label="Hodômetro (km)"
+              label="Odômetro (km)"
               type="number"
               value={formData.odometer}
               onChange={(e) => setFormData({ ...formData, odometer: parseInt(e.target.value) })}
