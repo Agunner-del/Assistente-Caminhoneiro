@@ -23,7 +23,6 @@ import AIInputButton, { AIInputButtonHandle } from '../components/AIInputButton'
 import ActionModalButton from '../components/ActionModalButton';
 import AIConfirmationModal from '../components/AIConfirmationModal';
 import FuelStatsCard from '../components/FuelStatsCard';
-import ImageUploadButton from '../components/ImageUploadButton';
 import { useAIProcessing } from '../hooks/useAIProcessing';
 import type { AIProcessingResponse, DashboardStats } from '../../shared/types';
 
@@ -401,6 +400,7 @@ const Dashboard: React.FC = () => {
         onRecordingStart={handleRecordingStart}
         onRecordingStop={handleRecordingStop}
         disabled={isProcessing || aiIsProcessing}
+        showButton={false}
       />
 
       <ActionModalButton

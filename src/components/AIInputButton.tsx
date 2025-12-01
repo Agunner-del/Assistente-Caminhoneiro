@@ -10,6 +10,7 @@ interface AIInputButtonProps {
   onRecordingStart?: () => void;
   onRecordingStop?: () => void;
   disabled?: boolean;
+  showButton?: boolean;
 }
 
 export interface AIInputButtonHandle {
@@ -21,7 +22,8 @@ const AIInputButton = forwardRef<AIInputButtonHandle, AIInputButtonProps>(({
   onTranscriptionComplete,
   onRecordingStart,
   onRecordingStop,
-  disabled = false
+  disabled = false,
+  showButton = true
 }, ref) => {
   const { enqueueSnackbar } = useSnackbar();
   const {
@@ -81,6 +83,10 @@ const AIInputButton = forwardRef<AIInputButtonHandle, AIInputButtonProps>(({
       }
     }
   }));
+
+  if (!showButton) {
+    return null;
+  }
 
   return (
     <Box
