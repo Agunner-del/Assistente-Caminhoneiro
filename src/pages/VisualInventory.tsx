@@ -72,6 +72,10 @@ export default function VisualInventory() {
   }, []);
 
   const loadInventoryItems = async () => {
+    if (!user) {
+      setLoading(false);
+      return;
+    }
     try {
       setLoading(true);
       const data = await apiClient.getVisualInventoryItems();

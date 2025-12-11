@@ -68,6 +68,10 @@ export default function Fuel() {
   }, []);
 
   const loadFuelLogs = async () => {
+    if (!user) {
+      setLoading(false);
+      return;
+    }
     try {
       setLoading(true);
       const data = await apiClient.getFuelLogs();

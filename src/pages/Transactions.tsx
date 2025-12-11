@@ -67,6 +67,10 @@ export default function Transactions() {
   }, []);
 
   const loadTransactions = async () => {
+    if (!user) {
+      setLoading(false);
+      return;
+    }
     try {
       setLoading(true);
       const data = await apiClient.getTransactions();
