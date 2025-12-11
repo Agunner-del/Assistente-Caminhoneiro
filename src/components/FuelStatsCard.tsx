@@ -48,7 +48,8 @@ const FuelStatsCard: React.FC<FuelStatsCardProps> = ({ userId }) => {
 
       const token = localStorage.getItem('auth_token');
       if (!token) {
-        throw new Error('Usuário não autenticado');
+        setError('Faça login para ver as estatísticas de combustível');
+        return;
       }
 
       const response = await fetch('/api/fuel-logs/stats', {
